@@ -1,5 +1,5 @@
 algorithm for shell sort:-
-------------------------
+-------------------------
 1.start
 2.Initialize the value of interval
 3.divide the list into smaller sub-list of equal interval 
