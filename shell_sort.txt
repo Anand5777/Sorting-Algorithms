@@ -1,1 +1,57 @@
-//write an algorithm for shell sort
+algorithm for shell sort:-
+------------------------
+1.start
+2.Initialize the value of interval
+3.divide the list into smaller sub-list of equal interval 
+4.sort sub-lists
+5.If it is the first element, it is already sorted. return 1;
+6.Pick next element
+7.Compare with all elements in the sorted sub-list
+8.Shift all the elements in the sorted sub-list that is greater than the 
+         value to be sorted
+9. Insert the value
+10. Repeat until complete list is sorted
+11.Stop.
+
+
+c code for shell sort:-
+----------------------
+
+#include<stdio.h>
+ 
+void sort(int a[],int n)
+{
+	int gap,i,j,temp;
+	for(gap=n/2;gap>0;gap/=2)
+	{
+		for(i=gap;i<n;i+=1)
+		{
+			temp=a[i];
+			
+			for(j=i;j>=gap&&a[j-gap]>temp;j-=gap)
+				a[j]=a[j-gap];
+			
+			a[j]=temp;
+		}
+	}
+}
+ 
+int main()
+{
+	int a[20],i,n;
+	
+	printf("Enter number of elements:");
+	scanf("%d",&n);
+		
+	printf("Enter array elements:\n");
+	for(i=0;i<n;++i)
+		scanf("%d",&a[i]);
+ 
+	sort(a,n);
+ 
+	printf("\nArray after shell sort:\n");
+	for(i=0;i<n;++i)
+		printf("%d ",a[i]);
+ 
+    return 0;
+}
